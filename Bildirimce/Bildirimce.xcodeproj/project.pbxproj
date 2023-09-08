@@ -11,6 +11,13 @@
 		01FEEB862AAA49C800B8DB48 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FEEB852AAA49C800B8DB48 /* ContentView.swift */; };
 		01FEEB882AAA49CA00B8DB48 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01FEEB872AAA49CA00B8DB48 /* Assets.xcassets */; };
 		01FEEB8B2AAA49CA00B8DB48 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01FEEB8A2AAA49CA00B8DB48 /* Preview Assets.xcassets */; };
+		01FEF51D2AAAFF5000913FCB /* Notification_Permission_ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FEF51C2AAAFF5000913FCB /* Notification_Permission_ViewModel.swift */; };
+		01FEF51F2AAB00BD00913FCB /* Turkish_Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FEF51E2AAB00BD00913FCB /* Turkish_Model.swift */; };
+		01FEF5212AAB014C00913FCB /* English_Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FEF5202AAB014C00913FCB /* English_Model.swift */; };
+		01FEF5272AAB043000913FCB /* UserNofiticationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FEF5262AAB043000913FCB /* UserNofiticationExtension.swift */; };
+		01FEF5292AAB084B00913FCB /* Notification_Menu_ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FEF5282AAB084B00913FCB /* Notification_Menu_ViewModel.swift */; };
+		01FEF52B2AAB09ED00913FCB /* Notification_Content_ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FEF52A2AAB09ED00913FCB /* Notification_Content_ViewModel.swift */; };
+		01FEF52D2AAB0BF100913FCB /* Date_Settings_ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FEF52C2AAB0BF100913FCB /* Date_Settings_ViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +28,13 @@
 		01FEEB852AAA49C800B8DB48 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		01FEEB872AAA49CA00B8DB48 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		01FEEB8A2AAA49CA00B8DB48 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		01FEF51C2AAAFF5000913FCB /* Notification_Permission_ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Notification_Permission_ViewModel.swift; path = Bildirimce/ViewModel/Notification_Permission_ViewModel.swift; sourceTree = SOURCE_ROOT; };
+		01FEF51E2AAB00BD00913FCB /* Turkish_Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Turkish_Model.swift; sourceTree = "<group>"; };
+		01FEF5202AAB014C00913FCB /* English_Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = English_Model.swift; sourceTree = "<group>"; };
+		01FEF5262AAB043000913FCB /* UserNofiticationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNofiticationExtension.swift; sourceTree = "<group>"; };
+		01FEF5282AAB084B00913FCB /* Notification_Menu_ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification_Menu_ViewModel.swift; sourceTree = "<group>"; };
+		01FEF52A2AAB09ED00913FCB /* Notification_Content_ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification_Content_ViewModel.swift; sourceTree = "<group>"; };
+		01FEF52C2AAB0BF100913FCB /* Date_Settings_ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date_Settings_ViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +51,8 @@
 		015117C62AAA7F2D000B0920 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				01FEF51E2AAB00BD00913FCB /* Turkish_Model.swift */,
+				01FEF5202AAB014C00913FCB /* English_Model.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -60,6 +76,8 @@
 		01FEEB822AAA49C800B8DB48 /* Bildirimce */ = {
 			isa = PBXGroup;
 			children = (
+				01FEF5242AAB040200913FCB /* Helpers */,
+				01FEF51B2AAAFE6500913FCB /* ViewModel */,
 				015117C62AAA7F2D000B0920 /* Model */,
 				015117C32AAA4CA5000B0920 /* Info.plist */,
 				015117C22AAA4BE4000B0920 /* Bildirimce.entitlements */,
@@ -77,6 +95,33 @@
 				01FEEB8A2AAA49CA00B8DB48 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		01FEF51B2AAAFE6500913FCB /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				01FEF51C2AAAFF5000913FCB /* Notification_Permission_ViewModel.swift */,
+				01FEF5282AAB084B00913FCB /* Notification_Menu_ViewModel.swift */,
+				01FEF52A2AAB09ED00913FCB /* Notification_Content_ViewModel.swift */,
+				01FEF52C2AAB0BF100913FCB /* Date_Settings_ViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		01FEF5242AAB040200913FCB /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				01FEF5252AAB040F00913FCB /* Extensions */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		01FEF5252AAB040F00913FCB /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				01FEF5262AAB043000913FCB /* UserNofiticationExtension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -150,7 +195,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				01FEEB862AAA49C800B8DB48 /* ContentView.swift in Sources */,
+				01FEF5272AAB043000913FCB /* UserNofiticationExtension.swift in Sources */,
+				01FEF5212AAB014C00913FCB /* English_Model.swift in Sources */,
+				01FEF51D2AAAFF5000913FCB /* Notification_Permission_ViewModel.swift in Sources */,
 				01FEEB842AAA49C800B8DB48 /* BildirimceApp.swift in Sources */,
+				01FEF51F2AAB00BD00913FCB /* Turkish_Model.swift in Sources */,
+				01FEF52D2AAB0BF100913FCB /* Date_Settings_ViewModel.swift in Sources */,
+				01FEF52B2AAB09ED00913FCB /* Notification_Content_ViewModel.swift in Sources */,
+				01FEF5292AAB084B00913FCB /* Notification_Menu_ViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
