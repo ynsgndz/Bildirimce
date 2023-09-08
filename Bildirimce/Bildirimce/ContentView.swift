@@ -21,28 +21,35 @@ struct ContentView: View {
     init() {  notification_permission.get_permission() }
     var body: some View {
         VStack {
-            
-            Button {
-                guard notification_permission.permission_status else { return}
+            HStack{
+                Text("Bildirimce").font(.largeTitle)
+                Spacer()
+                Button {
+                    guard notification_permission.permission_status else { return}
+                    
+                    notification_set_menu.setmenu()
+                    notification_content.set_content()
+                    
+                    print("Butona tiklandi")
+                } label: {
+                    if(notification_permission.permission_status){
+                        Text( "✅")
+                    }else{
+                        Text( "☑️" )
+                    }
+                }.frame(width: 50,height: 30)
+                    .background().padding(.trailing, 5)
                 
-                notification_set_menu.setmenu()
-                notification_content.set_content()
-
-                print("Butona tiklandi")
-            } label: {
-                if(notification_permission.permission_status){
-                    Text( "Bildirim izni verilmiş.")
-                }else{
-                   Text( "Lütfen bildirim izni verin." )
-                }
+                
             }
-
-            
            
         
             List(0..<app_date_index,id: \.self){ index in
-                Text("\( toWant[index] ): \(ToTranslate[index])")
-            }
+                Section(header: Text("Word List"),footer: Text("My Word History")){
+                    Text("\( toWant[index] ): \(ToTranslate[index])").textCase(.uppercase).foregroundColor(.purple)
+                }
+            }.listStyle(DefaultListStyle())
+                .background(Color.white.opacity(1))
         }
         .padding()
          

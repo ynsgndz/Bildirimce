@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		011142D12AAB6132006021F6 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011142D02AAB6132006021F6 /* SettingsView.swift */; };
+		011142D32AAB6156006021F6 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011142D22AAB6156006021F6 /* MainView.swift */; };
 		01FEEB842AAA49C800B8DB48 /* BildirimceApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FEEB832AAA49C800B8DB48 /* BildirimceApp.swift */; };
 		01FEEB862AAA49C800B8DB48 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FEEB852AAA49C800B8DB48 /* ContentView.swift */; };
 		01FEEB882AAA49CA00B8DB48 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01FEEB872AAA49CA00B8DB48 /* Assets.xcassets */; };
@@ -21,6 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		011142D02AAB6132006021F6 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		011142D22AAB6156006021F6 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		015117C22AAA4BE4000B0920 /* Bildirimce.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Bildirimce.entitlements; sourceTree = "<group>"; };
 		015117C32AAA4CA5000B0920 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		01FEEB802AAA49C800B8DB48 /* Bildirimce.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bildirimce.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -48,6 +52,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		011142CF2AAB611B006021F6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				011142D02AAB6132006021F6 /* SettingsView.swift */,
+				011142D22AAB6156006021F6 /* MainView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		015117C62AAA7F2D000B0920 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -76,6 +89,7 @@
 		01FEEB822AAA49C800B8DB48 /* Bildirimce */ = {
 			isa = PBXGroup;
 			children = (
+				011142CF2AAB611B006021F6 /* View */,
 				01FEF5242AAB040200913FCB /* Helpers */,
 				01FEF51B2AAAFE6500913FCB /* ViewModel */,
 				015117C62AAA7F2D000B0920 /* Model */,
@@ -199,7 +213,9 @@
 				01FEF5212AAB014C00913FCB /* English_Model.swift in Sources */,
 				01FEF51D2AAAFF5000913FCB /* Notification_Permission_ViewModel.swift in Sources */,
 				01FEEB842AAA49C800B8DB48 /* BildirimceApp.swift in Sources */,
+				011142D12AAB6132006021F6 /* SettingsView.swift in Sources */,
 				01FEF51F2AAB00BD00913FCB /* Turkish_Model.swift in Sources */,
+				011142D32AAB6156006021F6 /* MainView.swift in Sources */,
 				01FEF52D2AAB0BF100913FCB /* Date_Settings_ViewModel.swift in Sources */,
 				01FEF52B2AAB09ED00913FCB /* Notification_Content_ViewModel.swift in Sources */,
 				01FEF5292AAB084B00913FCB /* Notification_Menu_ViewModel.swift in Sources */,

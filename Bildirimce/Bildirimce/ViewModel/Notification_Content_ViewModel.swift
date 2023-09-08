@@ -17,7 +17,7 @@ struct Notification_Content_ViewModel{
     var app_date = Date_Settings_ViewModel().get_current_day()
     var app_date_index = Date_Settings_ViewModel().get_current_day_index()
     func set_content() {
-        bildirim.title = "HER GÜN 1 İNGİLİZCE KELİME"
+        bildirim.title = "HER GÜN 1 KELİME"
         bildirim.subtitle = ""
         bildirim.body = """
                             🇬🇧 \(self.english[app_date].capitalized)
@@ -27,7 +27,7 @@ struct Notification_Content_ViewModel{
         bildirim.sound = UNNotificationSound.default
         bildirim.categoryIdentifier = "kategori"
         // zamansal tekrar
-        let date = DateComponents()
+            //  let date = DateComponents()
            //  date.day = 1
           //  date.month = 1
          //  date.year = 2023
