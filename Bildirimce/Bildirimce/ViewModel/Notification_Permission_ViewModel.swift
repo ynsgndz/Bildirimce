@@ -16,7 +16,9 @@ class Notification_Permission_ViewModel: ObservableObject {
             if succes {
                 print("Bildirim izni var")
                 DispatchQueue.main.async { [self] in
-                    permission_status = true
+                    self.permission_status = true
+                   
+                    
                 }
                    
                  
@@ -25,7 +27,7 @@ class Notification_Permission_ViewModel: ObservableObject {
                 print("Bildirim izni yok")
                 
                 DispatchQueue.main.async { [self] in
-                    permission_status = false
+                    self.permission_status = false
                 }
                
             }
