@@ -10,7 +10,8 @@ import UserNotifications
 
 struct ContentView: View {
 
-    @State var isPro = 0
+    @State var is_premium = 0
+    @State var is_saved = false
     
     var toWant = Turkish_Model().words
     var toTranslate = English_Model().words
@@ -21,6 +22,7 @@ struct ContentView: View {
         VStack {
             HStack{
                 Text("Bildirimce").font(.largeTitle)
+                    .foregroundColor(Color.purple)
                 Spacer()
            
                 
@@ -31,21 +33,52 @@ struct ContentView: View {
                 Section(header: Text("Day \(index+1)")/*,footer: Text("EN: He is ready to jump. \nTR: Atlamaya hazır.")*/){
                     VStack(alignment: .leading){
                  
-                          
                         Text("\(toTranslate[index]): \(toWant[index])")
                         .foregroundColor(.purple).font(.body.bold()).textCase(.uppercase)
-                    
-                        if(index == isPro){
-                            Text("🇬🇧: He is ready to jump. \n🇹🇷: Atlamaya hazır.").foregroundColor(.orange)
+                        
+                        if(index == is_premium){
+                            HStack{
+                                
+                                    Text("🇬🇧: He is ready to jump. \n🇹🇷: Atlamaya hazır.").foregroundColor(.orange)
+ 
+                                
+                                Spacer()
+                                VStack{
+                                    if(is_saved){
+                                        Button{ is_saved.toggle() }label:{
+                                            Image(systemName: "bookmark.square")
+                                                .resizable()
+                                                .frame(width: 50, height: 50)
+                                                .foregroundColor(Color.gray)
+                                            
+                                               
+                                        }
+                                    }else{
+                                        Button{ is_saved.toggle()  }label:{
+                                            Image(systemName: "bookmark.square")
+                                                .resizable()
+                                                .frame(width: 50, height: 50)
+                                                .foregroundColor(Color.purple)
+                                             
+                                            
+                                        }
+                                    }
+                                }
+                                
+                            }
                         }else{
+                            
                             HStack{
                                 Text("🇬🇧: He is ready to jump. \n🇹🇷: Atlamaya hazır.").foregroundColor(.orange).blur(radius: 3.5)
+                                Spacer()
                                 
                                 Text("🔒PREMIUM").foregroundColor(Color.gray).font(Font.title3).opacity(0.4)
                             }
                             
                            
                         }
+                        
+                        
                         
                    }
                       }.foregroundColor(.black)

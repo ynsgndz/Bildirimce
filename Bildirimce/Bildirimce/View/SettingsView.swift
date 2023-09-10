@@ -1,5 +1,5 @@
 //
-//  SettingsView.swift
+//  ProfileView.swift
 //  Bildirimce
 //
 //  Created by Yunus Gündüz on 8.09.2023.
@@ -8,7 +8,7 @@
 import SwiftUI
 import UserNotifications
 
-struct SettingsView: View {
+struct ProfileView: View {
     @State var button_text = "Bildirim al"
     @State var hour = 1
     @State var minute = 0
@@ -21,45 +21,41 @@ struct SettingsView: View {
     
     var body: some View {
    
+       
         VStack{
-            Text("Settings").padding(.all,10).font(.largeTitle).foregroundColor(Color.purple)
+            HStack{
+                Text("Ayarlar").font(.largeTitle)
+                    .foregroundColor(Color.purple)
+                Spacer()
+            }.padding(.bottom,20)
+            VStack{
             
-           
-                VStack{
-                
-                    VStack(alignment: .center){
-                        Text("Notification Time: ").foregroundColor(Color.orange)
-                        HStack{
-                           
-                            if(hour <= 9){Text("0\(hour)")} else{ Text("\(hour)") }
-                            Text(" : ")
-                            if(minute <= 9){ Text("0\(minute)") } else{Text("\(minute)") }
-                        }.font(.largeTitle).foregroundColor(Color.orange)
-                    }
-                    VStack{
-                      
-                        Stepper(value:$hour, in: 0...23){Text("HOUR:")}
-                        Stepper(value:$minute, in: 0...59,step: 15){Text("MINUTE:")
-                            
-                            
-                        }
-                            
-                         
-                       
-                    }.padding(10).foregroundColor(Color.orange)
-                    
-                    Button{
+                VStack(alignment: .center){
+                    Text("Bildirim zamanı: ").foregroundColor(Color.orange)
+                    HStack{
                         
-                    }label:{
-                        Text("🔒SAVE")
-                        Text("(PREMIUM)").font(Font.title3).opacity(0.4)
-                    }.foregroundColor(Color.orange)
-                   
-                } .blur(radius: 1.0)
+                        if(hour <= 9){Text("0\(hour)")} else{ Text("\(hour)") }
+                        Text(" : ")
+                        if(minute <= 9){ Text("0\(minute)") } else{Text("\(minute)") }
+                    }.font(Font.system(size: 40,weight: .bold,design: .rounded)).foregroundColor(Color.orange)
+                }
+                VStack{
+                    
+                    Stepper(value:$hour, in: 0...23){Text("Saat:")}
+                    Stepper(value:$minute, in: 0...59,step: 15){Text("Dakika:")}
+                        
                 
-           
-               
-             
+                }.padding(.horizontal,40).foregroundColor(Color.orange)
+                
+            Button{
+                
+            }label:{
+                Text("🔒KAYDET")
+                Text("(PREMIUM)").font(Font.title3).opacity(0.4)
+            }.foregroundColor(Color.orange)
+          
+                
+            } .blur(radius: 1.0)
             Spacer()
                
             Divider()
@@ -67,9 +63,9 @@ struct SettingsView: View {
                 Button{
                     
                 }label:{
-                    Text("Get a premium (")
-                    Text("1.99$").strikethrough(true)
-                    Text("/ 0.99$ )")
+                    Text("Premium ol (")
+                    Text("1.99TL").strikethrough(true)
+                    Text("/ 0.99TL )")
                     
                 }.padding(10)
                     
@@ -82,40 +78,44 @@ struct SettingsView: View {
             Divider()
                 
             Spacer()
-            Divider()
-            Button {
-                guard notification_permission.permission_status else  {  return openURL(URL(string: UIApplication.openSettingsURLString)!) }
+            
+            VStack{
+                Button {
+                    guard notification_permission.permission_status else  {  return openURL(URL(string: UIApplication.openSettingsURLString)!) }
+                         
+                    
+                    
+                    notification_set_menu.setmenu()
+                    notification_content.set_content()
+                    
+                    print("Butona tiklandi")
+                    
+                } label: {
+                    HStack{
+                        Text("Bildirim izni: ")
+                        Spacer()
+                   
+                    if(notification_permission.permission_status){
+                           Text( "✅")
+                        
+                    }else{
+                        
+                        Text(  "Yok! ☑️" )
+                        
+                    }
+                    }.foregroundColor(Color.purple)
                      
+                }.buttonStyle(.bordered)
+                    .padding(10)
+                    .tint(Color.white)
                 
-                
-                notification_set_menu.setmenu()
-                notification_content.set_content()
-                
-                print("Butona tiklandi")
-                
-            } label: {
-                HStack{
-                    Text("Notification permission: ")
-                    Spacer()
-               
-                if(notification_permission.permission_status){
-                       Text( "✅")
-                    
-                }else{
-                    
-                    Text(  "Not! ☑️" )
-                    
-                }
-                }.foregroundColor(Color.purple)
-                 
-            }.buttonStyle(.bordered)
-                .padding(10)
-                .tint(Color.white)
+            }
+           
            
             VStack{
-                Divider()
-                Text("Bildirimce learning app  v0.0.3.2 ").font(.system(size: 10)).padding(.top,10)
-                Divider()
+               
+                Text("Bildirimce dil eğitim uygulaması  v0.0.3.2 ").font(.system(size: 10)).padding(.top,10).foregroundColor(Color.gray)
+                
             }
            
         }.onAppear(perform: notification_permission.get_permission ).padding(10)
@@ -124,8 +124,8 @@ struct SettingsView: View {
    
 }
 
-struct SettingsView_Previews: PreviewProvider {
+struct ProfileViewView_Previews: PreviewProvider {
     static var previews: some View {
-        SettingsView()
+        ProfileView()
     }
 }

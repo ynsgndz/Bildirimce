@@ -15,15 +15,23 @@ struct MainView: View {
             TabView{
                 ContentView()
                     .tabItem {
-                        Label("Main", systemImage: "list.bullet.rectangle.portrait")
+                        Label("KELİMELER", systemImage: "list.bullet.circle")
                     }
-                    SettingsView()
+                
+                SaveView().tabItem{
+                    Label("KAYITLILAR", systemImage: "bookmark.circle")
+                    
+                }
+                
+                
+                ProfileView()
                     .tabItem {
-                            Label("Settings", systemImage: "ellipsis.rectangle")
+                            Label("PROFIL", systemImage: "person.crop.circle.badge.checkmark")
+                            
                         }
 
                     
-                }
+                }.accentColor(Color.purple)
             }
         }
        
