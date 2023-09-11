@@ -18,11 +18,7 @@ struct MainView: View {
                         Label("KELİMELER", systemImage: "list.bullet.circle")
                     }
                 
-                SaveView().tabItem{
-                    Label("KAYITLILAR", systemImage: "bookmark.circle")
-                    
-                }
-                
+               
                 
                 ProfileView()
                     .tabItem {

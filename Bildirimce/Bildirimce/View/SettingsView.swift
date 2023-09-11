@@ -6,10 +6,12 @@
 //
 
 import SwiftUI
+import StoreKit
 import UserNotifications
 
 struct ProfileView: View {
     @State var button_text = "Bildirim al"
+    @State var button_kaydet_text = "KAYDET"
     @State var hour = 1
     @State var minute = 0
     var notification_content = Notification_Content_ViewModel()
@@ -49,17 +51,28 @@ struct ProfileView: View {
                 
             Button{
                 
+                guard notification_permission.permission_status else  {  return openURL(URL(string: UIApplication.openSettingsURLString)!) }
+                     
+                
+                
+                notification_set_menu.setmenu() // notifications menu
+                notification_content.set_content_day(notification_hour: hour, notification_minute: minute)
+                
+                print("Butona tiklandi")
+                button_kaydet_text = "SAAT AYARLANDI"
             }label:{
-                Text("🔒KAYDET")
-                Text("(PREMIUM)").font(Font.title3).opacity(0.4)
-            }.foregroundColor(Color.orange)
+                Text("\(button_kaydet_text)")
+             //   Text("🔒KAYDET")
+               // Text("(PREMIUM)").font(Font.title3).opacity(0.4)
+                
+            }.foregroundColor(Color.orange).padding(20)
           
                 
-            } .blur(radius: 1.0)
+            } .blur(radius:0.0)
             Spacer()
                
-            Divider()
-            HStack{
+            
+      /*      HStack{
                 Button{
                     
                 }label:{
@@ -73,9 +86,9 @@ struct ProfileView: View {
                 .background(Color.orange)
                 .cornerRadius(/*@START_MENU_TOKEN@*/3.0/*@END_MENU_TOKEN@*/)
                     
-            }
-            .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
-            Divider()
+            } */
+      //      .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
+            
                 
             Spacer()
             
@@ -85,7 +98,7 @@ struct ProfileView: View {
                          
                     
                     
-                    notification_set_menu.setmenu()
+                    notification_set_menu.setmenu() // notifications menu
                     notification_content.set_content()
                     
                     print("Butona tiklandi")
